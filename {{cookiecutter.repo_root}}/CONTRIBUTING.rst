@@ -104,10 +104,3 @@ Before you submit a pull request, check that it meets these guidelines:
 3. The pull request should work for Python version 3.3 or higher. Check
    https://travis-ci.org/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_root }}/pull_requests
    and make sure that the tests pass for all supported Python versions.
-
-Tips
-----
-
-To run a subset of tests::
-
-    $ py.test tests.test_{{ cookiecutter.project_slug }}
