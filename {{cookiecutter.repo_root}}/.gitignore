@@ -64,6 +64,10 @@ docs/_build/
 !docs/Makefile
 !docs/readme.rst
 
+# Example Cliff command
+tests/test_greet.py
+{{cookiecutter.project_slug}}/greet.py
+
 # PyBuilder
 target/
 
