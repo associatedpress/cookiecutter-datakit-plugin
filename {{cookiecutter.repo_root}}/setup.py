@@ -39,6 +39,11 @@ setup(
     package_dir={'{{ cookiecutter.project_slug }}':
                  '{{ cookiecutter.project_slug }}'},
     include_package_data=True,
+    entry_points={
+        'datakit.plugins': [
+            #'fancyplugin:greet= {{ cookiecutter.project_slug }}.greet:Greet',
+        ]
+    },
     install_requires=requirements,
 {%- if cookiecutter.open_source_license in license_classifiers %}
     license="{{ cookiecutter.open_source_license }}",
