@@ -61,7 +61,6 @@ docs/_build/
 #!docs/history.rst
 #!docs/index.rst
 #!docs/make.bat
-#!docs/Makefile
 #!docs/readme.rst
 
 # Example Cliff command
