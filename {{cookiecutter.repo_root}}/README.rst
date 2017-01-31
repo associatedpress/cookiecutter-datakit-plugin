@@ -49,7 +49,7 @@ Usage
 Credits
 ========
 
-This package was created with Cookiecutter_ and the `associatedpress/cookiecutter-datakit-plugin`_ 
+This plugin was created with Cookiecutter_ and the `associatedpress/cookiecutter-datakit-plugin`_ 
 project template (a modified version of the most excellent `audreyr/cookiecutter-pypackage`_).
 
 .. _datakit: https://github.com/associatedpress/datakit-core
