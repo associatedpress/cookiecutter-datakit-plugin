@@ -29,25 +29,25 @@
 
 
 Features
---------
+========
 
 * TODO
 
 Installation
-------------
+============
 
 In order to use this plugin with a system-wide install of datakit_::
 
   $ sudo pip install {{ cookiecutter.repo_root }}
 
 Usage
------
+=====
 
 * TODO
 
 
 Credits
----------
+========
 
 This package was created with Cookiecutter_ and the `associatedpress/cookiecutter-datakit-plugin`_ 
 project template (a modified version of the most excellent `audreyr/cookiecutter-pypackage`_).
