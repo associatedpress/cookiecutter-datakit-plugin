@@ -2,6 +2,10 @@
 Datakit Plugin Package
 ======================
 
+.. image:: https://img.shields.io/travis/associatedpress/cookiecutter-datakit-plugin.svg
+    :target: https://travis-ci.org/associatedpress/cookiecutter-datakit-plugin
+    :alt: Linux build status on Travis CI
+
 .. image:: https://pyup.io/repos/github/associatedpress/cookiecutter-datakit-plugin/shield.svg
      :target: https://pyup.io/repos/github/associatedpress/cookiecutter-datakit-plugin/
      :alt: Updates
@@ -23,15 +27,6 @@ Features
 * Auto-release to PyPI_ when you push a new tag to master (optional)
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
-
-Build Status
--------------
-
-Linux:
-
-.. image:: https://img.shields.io/travis/zstumgoren/cookiecutter-datakit-plugin.svg
-    :target: https://travis-ci.org/zstugmoren/cookiecutter-datakit-plugin
-    :alt: Linux build status on Travis CI
 
 
 Quickstart
