@@ -1,25 +1,12 @@
 language: python
 python: 3.5
-
 env:
   - TOXENV=py35
   - TOXENV=py34
   - TOXENV=py33
 
-install: pip install -U tox
+install:
+  - pip install -U tox
 
-# command to run tests, e.g. python setup.py test
-script: tox -e ${TOXENV}
-
-# After you create the Github repo and add it to Travis, run the
-# travis_pypi_setup.py script to finish PyPI deployment setup
-deploy:
-  provider: pypi
-  distributions: sdist bdist_wheel
-  user: zstumgoren
-  password:
-    secure: PLEASE_REPLACE_ME
-  on:
-    tags: true
-    repo: associatedpress/cookiecutter-datakit-plugin
-    condition: $TOXENV == py35
+script:
+  - tox
