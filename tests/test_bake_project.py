@@ -176,17 +176,19 @@ def test_bake_not_open_source(cookies):
         assert 'License' not in result.project.join('README.rst').read()
 
 
-def test_using_pytest(cookies):
+def test_example_code(cookies):
     with bake_in_temp_dir(cookies) as result:
         assert result.project.isdir()
-        test_file_path = result.project.join('tests/test_new_project.py')
-        lines = test_file_path.readlines()
-        assert "import pytest" in ''.join(lines)
+        test_file_path = result.project.join('tests/test_greet.py')
+        command_path = result.project.join('new_project/greet.py')
+        test_lines = test_file_path.readlines()
+        assert command_path.exists()
+        assert "from new_project.greet import Greet" in ''.join(test_lines)
 
 
 def test_project_with_invalid_module_name(cookies):
     result = cookies.bake(extra_context={'project_name': 'something-with-a-dash'})
-    assert result.project is None
+    assert result.project is not None
     result = cookies.bake()
     project_path = str(result.project)
 
