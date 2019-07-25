@@ -84,6 +84,11 @@ def test_bake_with_defaults(cookies):
         assert 'tests' in found_toplevel_files
         assert 'travis_pypi_setup.py' in found_toplevel_files
 
+        # Check that TOC entries are on multiple lines
+        docs_index_path = result.project.join('docs/index.rst')
+        with open(str(docs_index_path)) as index_file:
+            assert 'authorshistory' not in index_file.read()
+
 
 def test_bake_and_run_tests(cookies):
     with bake_in_temp_dir(cookies) as result:
@@ -116,14 +121,14 @@ def test_bake_and_run_travis_pypi_setup(cookies):
                             ' --repo associatedpress/cookiecutter-datakit-plugin --password invalidpass')
         run_inside_dir(travis_setup_cmd, project_path)
         # then:
-        result_travis_config = yaml.load(result.project.join(".travis.yml").open())
+        result_travis_config = yaml.load(result.project.join(".travis.yml").open(), Loader=yaml.FullLoader)
         min_size_of_encrypted_password = 50
         assert len(result_travis_config["deploy"]["password"]["secure"]) > min_size_of_encrypted_password
 
 
 def test_bake_without_travis_pypi_setup(cookies):
     with bake_in_temp_dir(cookies, extra_context={'use_pypi_deployment_with_travis': 'n'}) as result:
-        result_travis_config = yaml.load(result.project.join(".travis.yml").open())
+        result_travis_config = yaml.load(result.project.join(".travis.yml").open(), Loader=yaml.FullLoader)
         assert "deploy" not in result_travis_config
         assert "python" == result_travis_config["language"]
         found_toplevel_files = [f.basename for f in result.project.listdir()]
@@ -198,6 +203,6 @@ def test_project_with_invalid_module_name(cookies):
     run_inside_dir(travis_setup_cmd, project_path)
 
     # then:
-    result_travis_config = yaml.load(open(os.path.join(project_path, ".travis.yml")))
+    result_travis_config = yaml.load(open(os.path.join(project_path, ".travis.yml")), Loader=yaml.FullLoader)
     assert "secure" in result_travis_config["deploy"]["password"],\
         "missing password config in .travis.yml"
