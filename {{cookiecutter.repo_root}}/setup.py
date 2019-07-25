@@ -42,7 +42,7 @@ setup(
     include_package_data=True,
     entry_points={
         'datakit.plugins': [
-            #'fancyplugin:greet= {{ cookiecutter.project_slug }}.greet:Greet',
+            #'fancyplugin greet= {{ cookiecutter.project_slug }}.greet:Greet',
         ]
     },
     install_requires=requirements,
