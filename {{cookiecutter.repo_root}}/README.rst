@@ -1,10 +1,10 @@
 {% set is_open_source = cookiecutter.open_source_license != 'Not open source' -%}
-===============================
-{{ cookiecutter.project_name }}
-===============================
 
 {% if is_open_source %}
 .. image:: https://img.shields.io/pypi/v/{{ cookiecutter.repo_root }}.svg
+        :target: https://pypi.python.org/pypi/{{ cookiecutter.repo_root }}
+
+.. image:: https://img.shields.io/pypi/pyversions/{{ cookiecutter.repo_root }}.svg
         :target: https://pypi.python.org/pypi/{{ cookiecutter.repo_root }}
 
 .. image:: https://img.shields.io/travis/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_root }}.svg
@@ -15,44 +15,37 @@
         :alt: Documentation Status
 {%- endif %}
 
-.. image:: https://pyup.io/repos/github/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_root }}/shield.svg
-     :target: https://pyup.io/repos/github/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_root }}/
-     :alt: Updates
 
+Overview
+========
 
 {{ cookiecutter.project_short_description }}
 
-{% if is_open_source %}
-* Free software: {{ cookiecutter.open_source_license }}
-* Documentation: https://{{ cookiecutter.repo_root | replace("_", "-") }}.readthedocs.io.
-{% endif %}
+* Documentation: http://{{ cookiecutter.repo_root }}.readthedocs.io/en/latest/
+* Github: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_root }}
+* PyPI: https://pypi.python.org/pypi/{{ cookiecutter.repo_root }}
+* Free and open source software: `{{ cookiecutter.open_source_license }}`_
 
+.. _{{ cookiecutter.open_source_license }}: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_root }}/blob/master/LICENSE
 
 Features
 ========
 
 * TODO
 
-Installation
-============
+Quickstart
+==========
 
-In order to use this plugin with a system-wide install of datakit_::
+To use this datakit_ plugin::
 
-  $ sudo pip install {{ cookiecutter.repo_root }}
+  $ pip install {{ cookiecutter.repo_root }}
 
-Usage
-=====
+Check out the available commands::
 
-* TODO
+  $ datakit --help
 
+.. note:: See the `{{ cookiecutter.repo_root | replace("_", "-") }} docs`_ for more detailed usage info.
 
-Credits
-========
-
-This plugin was created with Cookiecutter_ and the `associatedpress/cookiecutter-datakit-plugin`_ 
-project template (a modified version of the most excellent `audreyr/cookiecutter-pypackage`_).
 
 .. _datakit: https://github.com/associatedpress/datakit-core
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`associatedpress/cookiecutter-datakit-plugin`: https://github.com/associatedpress/cookiecutter-datakit-plugin
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+.. _{{ cookiecutter.repo_root | replace("_", "-") }} docs: https://{{ cookiecutter.repo_root | replace("_", "-") }}.readthedocs.io/en/latest/

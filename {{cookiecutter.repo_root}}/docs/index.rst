@@ -1,14 +1,15 @@
-Welcome to {{ cookiecutter.project_name }}'s documentation!
-===========================================================
+.. {{ cookiecutter.repo_root }} documentation master file
 
-Contents:
+.. include:: ../README.rst
+
+Documentation
+=============
 
 .. toctree::
-   :maxdepth: 2
-
-   readme
+   install
+   usage
    contributing
-   {% if cookiecutter.create_author_file == 'y' -%}authors{% endif -%}
+   {% if cookiecutter.create_author_file == 'y' %}authors{% endif %}
    history
 
 Indices and tables
@@ -17,3 +18,14 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+Credits
+========
+
+This plugin was created with Cookiecutter_ and the `associatedpress/cookiecutter-datakit-plugin`_ 
+project template (a modified version of the most excellent `audreyr/cookiecutter-pypackage`_).
+
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`associatedpress/cookiecutter-datakit-plugin`: https://github.com/associatedpress/cookiecutter-datakit-plugin
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
